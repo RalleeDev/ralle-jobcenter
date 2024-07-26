@@ -1,3 +1,5 @@
+lib.locale()
+
 RegisterNetEvent('ralle-jobcenter:Setjob', function (job, job_grade)
     local oxPlayer = Ox.GetPlayerFromUserId(source)
     local distance = #(Config.location - oxPlayer.getCoords())
