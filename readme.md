@@ -29,11 +29,15 @@ start ralle-jobcenter
 
 - You have now downloaded the resource and are now ready to go.
 
+## Showcase
+
+
+
 ## Configuring
 
 If you want to configure the resource. To add jobs or change language then i have made a short guide below.
 
-### Adding jobs:
+Adding jobs:
 
 - Head into the folder where the resource is located
 - Open config.lua
@@ -55,6 +59,7 @@ Config.jobs = {
 - Replace 'job' with the job name from the databse
 - Replace 'Job label' with the text you wanna have shown in the jobcenter menu.
 - You are now done
+- You can add as many jobs in as you want but alot may confuse players.
 
 Adding a new language:
 
