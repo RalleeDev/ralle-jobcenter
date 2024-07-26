@@ -1,6 +1,6 @@
 # Ralle-jobcenter
 
-Ralle-jobcenter is a lightweight jobcenter that runs on ox_core as of right now. It is a simple resource that allows for customization and translation if english is not suitable for your server
+Ralle-jobcenter is a lightweight jobcenter in FiveM that runs on ox_core as of right now. It is a simple resource that allows for customization and translation if english is not suitable for your server
 
 ## Installation
 
@@ -31,9 +31,9 @@ start ralle-jobcenter
 
 ## Configuring
 
-If you want to configure the resource. To add jobs or change language then
+If you want to configure the resource. To add jobs or change language then i have made a short guide below.
 
-Adding jobs:
+### Adding jobs:
 
 - Head into the folder where the resource is located
 - Open config.lua
@@ -88,5 +88,5 @@ setr ox:locale "en"
     GNU General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+    along with this program.  If not, see <https://www.gnu.org/licenses/gpl-3.0.html>.
 ```
