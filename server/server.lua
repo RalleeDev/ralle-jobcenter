@@ -23,7 +23,7 @@ RegisterNetEvent('ralle-jobcenter:Setjob', function (job, job_grade)
 end)
 
 -- Doens't work atm
-lib.addCommand('jobs', {
+lib.addCommand('job', {
     help = locale('job_command_help'),
 }, function(source, args, raw)
     local player = Ox.GetPlayerFromUserId(source)
@@ -34,13 +34,13 @@ function GetJobs(charId)
     local response = MySQL.query.await('SELECT `name`, `isActive` FROM `character_groups` WHERE `charId` = ?', {
         charId
     })
-    print(json.encode(response))
 
-    for _, row in ipairs(response) do
+    if response[1].isActive then
+        local chatMessage = locale('current_job') .. ' ' .. response[1].name
+
         exports.chat:addMessage(-1, {
-            color = {255, 0, 0},
-            args = {"SYSTEM", string.format("Your current job is: ", row.name)}
+            color = {255, 165, 0},
+            args = {"JOBS", chatMessage}
         })
     end
-
 end
