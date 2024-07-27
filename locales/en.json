@@ -1,4 +1,5 @@
 {
+    "job": "JOB",
     "job_center": "Jobcenter",
     "open_job_center": "[E] - Open jobcenter",
     "too_far_away": "You are too far away from the jobcenter. Try again.",
