@@ -31,8 +31,6 @@ start ralle-jobcenter
 
 ## Showcase
 
-
-
 ## Configuring
 
 If you want to configure the resource. To add jobs or change language then i have made a short guide below.
@@ -76,6 +74,17 @@ setr ox:locale "en"
 
 - Replace en with your contries language code and restart the server
 - You have now configured the jobcenter🎉
+
+## Contributing
+
+If you want to contribute to the project, feel free to open a pull request with a new feature or one of the things on the todo list below
+
+TODO list:
+
+- Add Target support
+- Refactor code for less eye pain
+- Make a showcase
+- Optimize the script where possible
 
 ## License
 

@@ -1,6 +1,9 @@
 Config = {}
 
+-- The location of the jobcenter
 Config.location = vec3(-263.977, -966.500, 30.224)
+--The Distance needed between the location and player to show the marker
+Config.Distance = 10
 
 --To change the language of the blip. You will need to edit a locale file
 Config.blip = {

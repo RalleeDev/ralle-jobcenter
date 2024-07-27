@@ -29,7 +29,7 @@ lib.registerContext({
 --Jobcenter zone
 local point = lib.points.new({
     coords = Config.location,
-    distance = 20,
+    distance = Config.Distance,
 })
 
 local marker = lib.marker.new({

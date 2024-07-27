@@ -26,20 +26,24 @@ lib.addCommand('job', {
     help = locale('job_command_help'),
 }, function(source, args, raw)
     local player = Ox.GetPlayerFromUserId(source)
-    GetJobs(player.charId)
+    GetActiveJob(player.charId)
 end)
 
-function GetJobs(charId)
+function GetActiveJob(charId)
     local response = MySQL.query.await('SELECT `name`, `isActive` FROM `character_groups` WHERE `charId` = ?', {
         charId
     })
 
-    if response[1].isActive then
-        local chatMessage = locale('current_job') .. ' ' .. response[1].name
-
-        exports.chat:addMessage(-1, {
-            color = {255, 165, 0},
-            args = {locale('job'), chatMessage}
-        })
+    for index, value in ipairs(response) do
+        if response[index].isActive == true then
+            local Job = MySQL.query.await('SELECT `label` FROM `ox_groups` WHERE `name` = ?', {
+                response[index].name
+            })
+            local chatMessage = locale('current_job') .. ' ' .. Job[1].label
+            exports.chat:addMessage(-1, {
+                color = {255, 165, 0},
+                args = {locale('job'), chatMessage}
+            })
+        end
     end
 end
