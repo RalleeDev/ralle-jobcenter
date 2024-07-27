@@ -2,9 +2,16 @@ fx_version 'cerulean'
 game 'gta5'
 lua54 'yes'
 
-server_script 'server.lua'
+author 'RalleeDev'
+Description 'A simple, low effort jobcenter for ox_core using ox_lib'
+version '0.0.5'
 
-client_script 'client.lua'
+server_scripts {
+    '@oxmysql/lib/MySQL.lua',
+    'server/server.lua'
+}
+
+client_script 'client/client.lua'
 
 shared_scripts {
     '@ox_lib/init.lua',

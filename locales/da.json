@@ -2,6 +2,7 @@
     "job": "JOB",
     "job_center": "Jobcenter",
     "open_job_center": "[E] - Åbn jobcenter",
+    "congratulations": "Tillykke med dit nye job🎉",
     "too_far_away": "Du er for langt væk fra jobcentret. Prøv igen.",
     "job_command_help": "Viser alle dine nuværende jobs",
     "current_job": "Dit nuværende job er"
