@@ -1,15 +1,14 @@
-lib.locale()
+lib.locale() -- for locale support
 
-local point = lib.points.new({
-    coords = Config.location,
-    distance = 20,
-})
+-- Add the blip to the map
+local blip = AddBlipForCoord(Config.blip.location.x, Config.location.y, Config.location.z)
+SetBlipSprite(blip, Config.blip.BlipSprite)
+SetBlipColour(blip, Config.blip.BlipColour)
+BeginTextCommandSetBlipName('STRING')
+AddTextComponentSubstringPlayerName(locale('job_center'))
+EndTextCommandSetBlipName(blip)
 
-local marker = lib.marker.new({
-    coords = Config.location,
-    type = 1,
-})
-
+--Register context menus for the jobcenter
 local jobs = {}
 for i, job in ipairs(Config.jobs) do
     table.insert(jobs, {
@@ -20,9 +19,26 @@ for i, job in ipairs(Config.jobs) do
     })
 end
 
+lib.registerContext({
+    id = 'ralle-jobcenterMenu',
+    title = locale('job_center'),
+    canClose = true,
+    options = jobs
+})
+
+--Jobcenter zone
+local point = lib.points.new({
+    coords = Config.location,
+    distance = 20,
+})
+
+local marker = lib.marker.new({
+    coords = Config.location,
+    type = 1,
+})
+
 function point:nearby()
     marker:draw()
-
     if self.currentDistance < 1.5 then
         if not lib.isTextUIOpen() then
             lib.showTextUI(locale('open_job_center'))
@@ -39,12 +55,6 @@ function point:nearby()
     end
 end
 
-lib.registerContext({
-    id = 'ralle-jobcenterMenu',
-    title = locale('job_center'),
-    canClose = true,
-    options = jobs
-})
 
 function ChangeJobs(job)
     TriggerServerEvent('ralle-jobcenter:Setjob', job, 1)
