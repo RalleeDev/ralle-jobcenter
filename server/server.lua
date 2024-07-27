@@ -22,7 +22,6 @@ RegisterNetEvent('ralle-jobcenter:Setjob', function (job, job_grade)
     end
 end)
 
--- Doens't work atm
 lib.addCommand('job', {
     help = locale('job_command_help'),
 }, function(source, args, raw)
