@@ -4,6 +4,7 @@ lib.locale() -- for locale support
 local blip = AddBlipForCoord(Config.blip.location.x, Config.location.y, Config.location.z)
 SetBlipSprite(blip, Config.blip.BlipSprite)
 SetBlipColour(blip, Config.blip.BlipColour)
+SetBlipAsShortRange(blip, true)
 BeginTextCommandSetBlipName('STRING')
 AddTextComponentSubstringPlayerName(locale('job_center'))
 EndTextCommandSetBlipName(blip)
