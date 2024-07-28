@@ -1,6 +1,6 @@
 # Ralle-jobcenter
 
-Ralle-jobcenter is a lightweight jobcenter in FiveM that runs on ox_core as of right now. It is a simple resource that allows for customization and translation if english is not suitable for your server
+Ralle-jobcenter is a lightweight jobcenter in FiveM that runs on ox_core as of right now. It is a simple resource that allows for customization and translation if english is not suitable for your server.
 
 ## Features
 
