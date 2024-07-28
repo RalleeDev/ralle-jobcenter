@@ -88,7 +88,7 @@ setr ox:locale "en"
 
 If you want to contribute to the project, feel free to open a pull request with a new feature or one of the things on the todo list below
 
-TODO list:
+TODO list for v1.0.0:
 
 - Add Target support
 - Refactor code for less eye pain
