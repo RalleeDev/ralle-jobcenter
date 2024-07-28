@@ -31,6 +31,8 @@ start ralle-jobcenter
 
 ## Showcase
 
+[Showcase](showcase.mp4)
+
 ## Configuring
 
 If you want to configure the resource. To add jobs or change language then i have made a short guide below.
