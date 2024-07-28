@@ -92,7 +92,7 @@ TODO list:
 
 - Add Target support
 - Refactor code for less eye pain
-- Make a showcase
+- ~Make a showcase~
 - Optimize the script where possible
 
 ## License
