@@ -2,6 +2,13 @@
 
 Ralle-jobcenter is a lightweight jobcenter in FiveM that runs on ox_core as of right now. It is a simple resource that allows for customization and translation if english is not suitable for your server
 
+## Features
+
+- Customisable Menu with ability to put your own jobs in
+- Customisable blip and location
+- /job Command that shows the users current active job
+- Server side distance checks
+
 ## Installation
 
 Using git:
@@ -31,7 +38,7 @@ start ralle-jobcenter
 
 ## Showcase
 
-<video width="100%" height="100%" controls src="showcase.mp4" type="video/mp4"></video>
+[PREVIEW](https://youtu.be/J_evOatYuUA)
 
 ## Configuring
 

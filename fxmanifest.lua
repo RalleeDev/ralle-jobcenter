@@ -4,7 +4,7 @@ lua54 'yes'
 
 author 'RalleeDev'
 Description 'A simple, low effort jobcenter for ox_core using ox_lib'
-version '0.0.5'
+version '0.0.9'
 
 server_scripts {
     '@oxmysql/lib/MySQL.lua',
