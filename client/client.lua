@@ -1,3 +1,5 @@
+local useTarget = GetConvar("inventory:target", "false")
+print(useTarget)
 lib.locale() -- for locale support
 
 -- Add the blip to the map
@@ -27,35 +29,52 @@ lib.registerContext({
     options = jobs
 })
 
---Jobcenter zone
-local point = lib.points.new({
-    coords = Config.location,
-    distance = Config.Distance,
-})
+if useTarget == false then
+        --Jobcenter zone
+    local point = lib.points.new({
+        coords = Config.location,
+        distance = Config.Distance,
+    })
 
-local marker = lib.marker.new({
-    coords = Config.location,
-    type = 1,
-})
+    local marker = lib.marker.new({
+        coords = Config.location,
+        type = 1,
+    })
 
-function point:nearby()
-    marker:draw()
-    if self.currentDistance < 1.5 then
-        if not lib.isTextUIOpen() then
-            lib.showTextUI(locale('open_job_center'))
-        end
+    function point:nearby()
+        marker:draw()
+        if self.currentDistance < 1.5 then
+            if not lib.isTextUIOpen() then
+                lib.showTextUI(string.format('[E] - ' .. locale('open_job_center')))
+            end
 
-        if IsControlJustPressed(0, 51) then
-            lib.showContext('ralle-jobcenterMenu')
-        end
-    else
-        local isOpen, currentText = lib.isTextUIOpen()
-        if isOpen and currentText == locale('open_job_center') then
-            lib.hideTextUI()
+            if IsControlJustPressed(0, 51) then
+                lib.showContext('ralle-jobcenterMenu')
+            end
+        else
+            local isOpen, currentText = lib.isTextUIOpen()
+            if isOpen and currentText == string.format('[E] - ' .. locale('open_job_center')) then
+                lib.hideTextUI()
+            end
         end
     end
+elseif useTarget == 'true' then
+    local BoxZone = exports.ox_target:addBoxZone({
+        coords = Config.location,
+        size = vec3(3, 3, 3),
+        rotation = 45,
+        drawSprite = true,
+        options = {
+            label = locale('open_job_center'),
+            name = 'open_job_center',
+            icon = 'far fa-id-badge',
+            distance = 1.5,
+            onSelect = function(data)
+                lib.showContext('ralle-jobcenterMenu')
+            end
+        }
+    })
 end
-
 
 function ChangeJobs(job)
     TriggerServerEvent('ralle-jobcenter:Setjob', job, 1)
