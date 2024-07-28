@@ -88,12 +88,12 @@ setr ox:locale "en"
 
 If you want to contribute to the project, feel free to open a pull request with a new feature or one of the things on the todo list below
 
-TODO list for v1.0.0:
+TODO list:
 
-- Add Target support
+- Optimize the script where possible
 - Refactor code for less eye pain
 - ~Make a showcase~
-- Optimize the script where possible
+- ~Add Target support~
 
 ## License
 
